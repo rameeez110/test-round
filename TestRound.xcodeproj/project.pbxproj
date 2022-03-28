@@ -101,7 +101,6 @@
 				8F40CF24A815AEA9FA0F906B /* Pods-TestRoundTests.debug.xcconfig */,
 				F1279D3DB16FEFA4D4FAF2AD /* Pods-TestRoundTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -130,11 +129,10 @@
 		B61ED1A227F1D04500405CEB /* TestRound */ = {
 			isa = PBXGroup;
 			children = (
-				B61ED1A327F1D04500405CEB /* AppDelegate.swift */,
-				B61ED1A527F1D04500405CEB /* SceneDelegate.swift */,
-				B61ED1A727F1D04500405CEB /* ViewController.swift */,
-				B61ED1A927F1D04500405CEB /* Main.storyboard */,
-				B61ED1AC27F1D04700405CEB /* Assets.xcassets */,
+				B61ED1D627F1D32700405CEB /* Features */,
+				B61ED1D527F1D31200405CEB /* Common */,
+				B61ED1D427F1D30C00405CEB /* Resources */,
+				B61ED1D327F1D12100405CEB /* AppStartup */,
 				B61ED1AE27F1D04700405CEB /* LaunchScreen.storyboard */,
 				B61ED1B127F1D04700405CEB /* Info.plist */,
 			);
@@ -156,6 +154,207 @@
 				B61ED1C627F1D04700405CEB /* TestRoundUITestsLaunchTests.swift */,
 			);
 			path = TestRoundUITests;
+			sourceTree = "<group>";
+		};
+		B61ED1D327F1D12100405CEB /* AppStartup */ = {
+			isa = PBXGroup;
+			children = (
+				B61ED1D727F1D35000405CEB /* AppNavigator */,
+				B61ED1A327F1D04500405CEB /* AppDelegate.swift */,
+				B61ED1A527F1D04500405CEB /* SceneDelegate.swift */,
+			);
+			path = AppStartup;
+			sourceTree = "<group>";
+		};
+		B61ED1D427F1D30C00405CEB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B61ED1AC27F1D04700405CEB /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B61ED1D527F1D31200405CEB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B61ED1DB27F1D38000405CEB /* Networking */,
+				B61ED1DA27F1D37600405CEB /* Constants */,
+				B61ED1D927F1D36800405CEB /* UI */,
+				B61ED1D827F1D36000405CEB /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B61ED1D627F1D32700405CEB /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				B61ED1E027F1D3B800405CEB /* Services */,
+				B61ED1DF27F1D3B000405CEB /* Models */,
+				B61ED1DE27F1D39200405CEB /* UI */,
+				B61ED1DD27F1D38E00405CEB /* Data */,
+				B61ED1DC27F1D38900405CEB /* Domain */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		B61ED1D727F1D35000405CEB /* AppNavigator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppNavigator;
+			sourceTree = "<group>";
+		};
+		B61ED1D827F1D36000405CEB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B61ED1D927F1D36800405CEB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B61ED1DA27F1D37600405CEB /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B61ED1DB27F1D38000405CEB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B61ED1DC27F1D38900405CEB /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B61ED1DD27F1D38E00405CEB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B61ED1DE27F1D39200405CEB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B61ED1E127F1D3BE00405CEB /* Onboarding */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B61ED1DF27F1D3B000405CEB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B61ED1E027F1D3B800405CEB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B61ED1E127F1D3BE00405CEB /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B61ED1A927F1D04500405CEB /* Main.storyboard */,
+				B61ED1E327F1D3CB00405CEB /* Register */,
+				B61ED1E227F1D3C600405CEB /* Login */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B61ED1E227F1D3C600405CEB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B61ED1E627F1D3DB00405CEB /* LoginNavgiator */,
+				B61ED1E527F1D3D500405CEB /* ViewModel */,
+				B61ED1E427F1D3D100405CEB /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B61ED1E327F1D3CB00405CEB /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				B61ED1E927F1D3F700405CEB /* RegisterNavigator */,
+				B61ED1E827F1D3F100405CEB /* ViewModel */,
+				B61ED1E727F1D3EC00405CEB /* View */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		B61ED1E427F1D3D100405CEB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B61ED1EA27F1D40C00405CEB /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B61ED1E527F1D3D500405CEB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B61ED1E627F1D3DB00405CEB /* LoginNavgiator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoginNavgiator;
+			sourceTree = "<group>";
+		};
+		B61ED1E727F1D3EC00405CEB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B61ED1EB27F1D41600405CEB /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B61ED1E827F1D3F100405CEB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B61ED1E927F1D3F700405CEB /* RegisterNavigator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RegisterNavigator;
+			sourceTree = "<group>";
+		};
+		B61ED1EA27F1D40C00405CEB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B61ED1A727F1D04500405CEB /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B61ED1EB27F1D41600405CEB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		C8BBCBC7939B18C56F7BEDBE /* Frameworks */ = {
