@@ -9,11 +9,35 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var infoLabel: UILabel!
+    
+    var viewModel: LoginViewModelProtocol?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
 }
 
+// MARK:- IBActions
+extension ViewController {
+    @IBAction func didTapRegister() {
+        self.viewModel?.didTapRegister()
+    }
+    @IBAction func didTapLogin() {
+        self.viewModel?.didTapLogin()
+    }
+}
+
+//MARK: - Delegates
+
+extension ViewController: LoginViewModelDelegate {
+    func alert(with title: String, message: String) {
+        self.infoLabel.isHidden = false
+        self.infoLabel.text = message
+    }
+}
