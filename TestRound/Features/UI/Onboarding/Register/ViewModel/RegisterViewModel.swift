@@ -11,6 +11,7 @@ protocol RegisterViewModelDelegate: class {
     func alert(with title: String, message: String)
 }
 
+// Protocol for view model will use it for wiring
 protocol RegisterViewModelProtocol {
 
     var delegate: RegisterViewModelDelegate? { get set }

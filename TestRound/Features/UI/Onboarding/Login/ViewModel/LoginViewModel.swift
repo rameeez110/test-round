@@ -11,6 +11,7 @@ protocol LoginViewModelDelegate: class {
     func alert(with title: String, message: String)
 }
 
+// Protocol for view model will use it for wiring
 protocol LoginViewModelProtocol {
 
     var delegate: LoginViewModelDelegate? { get set }
@@ -31,7 +32,7 @@ final class LoginViewModel: LoginViewModelProtocol {
     }
 
     func didTapLogin() {
-        
+        navigator.navigateToClientsVC()
     }
 
     func didTapRegister() {

@@ -10,6 +10,8 @@ target 'TestRound' do
   pod 'Alamofire'
   pod 'PhoneNumberKit'
   pod 'IQKeyboardManagerSwift'
+  pod 'SwipeCellKit'
+  pod 'SwiftyAvatar'
 
   target 'TestRoundTests' do
     inherit! :search_paths
