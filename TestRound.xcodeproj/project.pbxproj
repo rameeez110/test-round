@@ -29,6 +29,7 @@
 		B650CCE627F438B600542290 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCE527F438B600542290 /* Client.swift */; };
 		B650CCE927F43C0000542290 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCE827F43C0000542290 /* Enums.swift */; };
 		B650CCEC27F4449000542290 /* CommonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCEB27F4449000542290 /* CommonClass.swift */; };
+		B650CCEE27F4464A00542290 /* db.json in Resources */ = {isa = PBXBuildFile; fileRef = B650CCED27F4464A00542290 /* db.json */; };
 		B6D7A58C27F393700006B273 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7A58B27F393700006B273 /* LoginViewModel.swift */; };
 		B6D7A58E27F393870006B273 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7A58D27F393870006B273 /* LoginNavigator.swift */; };
 		B6D7A59027F393990006B273 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7A58F27F393990006B273 /* RegisterViewController.swift */; };
@@ -99,6 +100,7 @@
 		B650CCE527F438B600542290 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		B650CCE827F43C0000542290 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		B650CCEB27F4449000542290 /* CommonClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonClass.swift; sourceTree = "<group>"; };
+		B650CCED27F4464A00542290 /* db.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = db.json; sourceTree = "<group>"; };
 		B6D7A58B27F393700006B273 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B6D7A58D27F393870006B273 /* LoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigator.swift; sourceTree = "<group>"; };
 		B6D7A58F27F393990006B273 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		B61ED1A227F1D04500405CEB /* TestRound */ = {
 			isa = PBXGroup;
 			children = (
+				B650CCED27F4464A00542290 /* db.json */,
 				B61ED1D627F1D32700405CEB /* Features */,
 				B61ED1D527F1D31200405CEB /* Common */,
 				B61ED1D427F1D30C00405CEB /* Resources */,
@@ -697,6 +700,7 @@
 				B61ED1AD27F1D04700405CEB /* Assets.xcassets in Resources */,
 				B61ED1AB27F1D04500405CEB /* Main.storyboard in Resources */,
 				B650CCDD27F4304800542290 /* EditClientTableViewCell.xib in Resources */,
+				B650CCEE27F4464A00542290 /* db.json in Resources */,
 				B650CCDC27F4304800542290 /* AddressTableViewCell.xib in Resources */,
 				B6D7A5A927F396E80006B273 /* Client.storyboard in Resources */,
 			);
