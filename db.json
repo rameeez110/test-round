@@ -1,26 +1,11 @@
 {
-    "Clients": [
-        {
-            "userId": 1,
-            "firstName": "Rameez",
-            "lastName": "Hasan",
-            "gender": 0,
-            "email": "rameeez110@gmail.com",
-            "phoneNumber": "923162237695",
-            "personalId": "test-123123",
-            "address": {
-                "city":"Karachi",
-                "country":"Pakistan",
-                "zip":"75080",
-                "street":"test"
-            },
-            "accounts": [
-                "Personal"
-            ],
-        }
-    ],
-    "User": {
-        "email": "rameeez110@gmail.com",
-        "password": "R@meez123"
+  "posts": [
+    {
+      "id": 1,
+      "title": "hello"
     }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
