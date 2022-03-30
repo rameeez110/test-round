@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FMPhotoPicker
 
 class ClientAddEditViewController: UIViewController {
     
@@ -13,47 +14,41 @@ class ClientAddEditViewController: UIViewController {
     
     @IBOutlet weak var profileImageView: UIImageView!
     
-    @IBOutlet weak var indvidualButton: UIButton!
-    @IBOutlet weak var bussinessButton: UIButton!
-    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     
     var imagePicker = UIImagePickerController()
-    var viewModel: ClientListingViewModelProtocol?
-//    var config = FMPhotoPickerConfig()
+    var viewModel: ClientAddEditViewModelProtocol?
+    var config = FMPhotoPickerConfig()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         self.setupUI()
+        self.viewModel?.mapUIDataSource()
     }
 }
 
 // MARK: -  Methods
 extension ClientAddEditViewController {
     func setupUI() {
-//        self.config.mediaTypes = [.image]
+        // this config will pick only images
+        // videos are not accepted
+        self.config.mediaTypes = [.image]
         self.registerNibsAndSetupTableView()
         self.firstNameTextField.autocapitalizationType = .words
         self.lastNameTextField.autocapitalizationType = .words
     }
-//    func setupNavBar() {
-//        self.title = "Edit Profile"
-//        let button1 = UIBarButtonItem(image: UIImage(named: "tick"), style: .plain, target: self, action: #selector(didTapTick))
-//        self.navigationItem.rightBarButtonItem  = button1
-//    }
+    // This method is responsible for registring cells and setup configurations for table view
     func registerNibsAndSetupTableView(){
         self.tableView.keyboardDismissMode = .onDrag
         self.tableView.tableFooterView = UIView()
         
-        let nibName = UINib(nibName: "EditProfileTableViewCell", bundle:nil)
-        self.tableView.register(nibName, forCellReuseIdentifier: "profileEditCell")
-        let sectionNib = UINib(nibName: "ProfileSectionTableViewCell", bundle:nil)
-        self.tableView.register(sectionNib, forCellReuseIdentifier: "profileSectionCell")
-        let footerNib = UINib(nibName: "ProfileFooterTableViewCell", bundle:nil)
-        self.tableView.register(footerNib, forCellReuseIdentifier: "profileFooterCell")
+        let nibName = UINib(nibName: "EditClientTableViewCell", bundle:nil)
+        self.tableView.register(nibName, forCellReuseIdentifier: "clientEditCell")
+        let footerNib = UINib(nibName: "ClientFooterTableViewCell", bundle:nil)
+        self.tableView.register(footerNib, forCellReuseIdentifier: "clientFooterCell")
         let addressNib = UINib(nibName: "AddressTableViewCell", bundle:nil)
         self.tableView.register(addressNib, forCellReuseIdentifier: "addressCell")
         self.tableView.estimatedRowHeight = 58
@@ -69,10 +64,8 @@ extension ClientAddEditViewController {
 extension ClientAddEditViewController {
     @IBAction func didTapImageCross() {
         self.profileImageView.image = UIImage(named: "user_new")
-        self.viewModel.profilePicAttachment.isUpdated = true
-        self.contactVM.profilePicAttachment.isUpdated = true
     }
-    
+    // Use this method for add and update
     @objc func didTapTick() {
         
     }
@@ -98,35 +91,46 @@ extension ClientAddEditViewController {
                                       handler: {(_: UIAlertAction!) in
             self.openPhotoGallery()
         }))
-//        CommonClass.sharedInstance.showSheet(sheet: sheet, sender: UIButton(), owner: self)
+        self.showSheet(sheet: sheet, sender: UIButton(), owner: self)
     }
     func openPhotoGallery() {
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
-            print("Button capture")
-            //            CommonClass.sharedInstance.ios15NavBar(color: .white, textColor: .blue)
             imagePicker.delegate = self
             imagePicker.sourceType = .savedPhotosAlbum
             imagePicker.allowsEditing = false
-//            imagePicker.navigationBar.isTranslucent = false
-//            imagePicker.navigationBar.tintColor = .black
-            //            self.present(imagePicker, animated: true, completion: nil)
-         
-            
             self.present(imagePicker, animated: true) {
-                
-                //                UINavigationBar.appearance(whenContainedInInstancesOf: [UIImagePickerController.self]).tintColor = .blue
             }
         }
     }
     func openCamera() {
         if UIImagePickerController.isSourceTypeAvailable(.camera){
-            print("Button capture")
             imagePicker.delegate = self
             imagePicker.sourceType = .camera
             imagePicker.allowsEditing = false
             self.present(imagePicker, animated: true) {
             }
         }
+    }
+    // Open Native Action Sheet
+    func showSheet(sheet: UIAlertController, sender: UIView, owner: UIViewController) {
+        
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
+            owner.present(sheet, animated: true, completion: nil)
+        case .pad:
+            let popOver = sheet.popoverPresentationController
+            
+            popOver?.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2, width: 0, height: 0)
+            popOver?.sourceView = sender
+            popOver?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+            
+            owner.present(sheet, animated: true, completion: nil)
+        case .unspecified:
+            owner.present(sheet, animated: true, completion: nil)
+        default:
+            print("")
+        }
+        
     }
 }
 
@@ -135,11 +139,6 @@ extension ClientAddEditViewController {
 extension ClientAddEditViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        self.profileImageView.image = nil
-//        self.profileImageView.image = UIImage(named: "user_new")
-//        if self.viewModel.profilePicAttachment.id != "" {
-//            self.viewModel.profilePicAttachment.isUpdated = true
-//        }
         self.dismiss(animated: true, completion: { () -> Void in})
     }
     
@@ -147,19 +146,18 @@ extension ClientAddEditViewController: UINavigationControllerDelegate, UIImagePi
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.profileImageView.image = image
         }
-//        self.dismiss(animated: true, completion: { () -> Void in})
         self.dismiss(animated: true) {
-//            if let img = self.profileImageView.image {
-//                let editor = FMImageEditorViewController(config: self.config, sourceImage: img)
-//                editor.delegate = self
-//                self.present(editor, animated: true)
-//            }
+            if let img = self.profileImageView.image {
+                let editor = FMImageEditorViewController(config: self.config, sourceImage: img)
+                editor.delegate = self
+                self.present(editor, animated: true)
+            }
         }
     }
 }
 extension ClientAddEditViewController: UITableViewDelegate ,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        9
+        6
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -171,113 +169,65 @@ extension ClientAddEditViewController: UITableViewDelegate ,UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        let profileSection = ProfileSections(rawValue: section) ?? ProfileSections.Phone
-        if profileSection == .Birthday || profileSection == .Occupation || profileSection == .CompanyName || profileSection == .Position{
-            return 0
+        if section == 6{
+            return 40
         }
-        return 40
+        return 0
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let indexPath = IndexPath.init(row: section, section: 0)
-        let cell = tableView.dequeueReusableCell(withIdentifier: "profileSectionCell", for: indexPath) as! ProfileSectionTableViewCell
-        cell.privacyStackView.isHidden = false
-        cell.titleLabel.text = self.viewModel.sections[section]
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 40))
+        let label = UILabel()
+        label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height - 10)
+        let type = ClientSections(rawValue: section) ?? .PersonalId
+        label.text = CommonClass.sharedInstance.getSectionHeader(sectionType: type)
+        label.font = UIFont(.avenirDemiBold, size: .standard(.h5))
+        label.textColor = .black
         
-        return cell.contentView
+        headerView.addSubview(label)
+        
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let profileSection = ProfileSections(rawValue: section) ?? ProfileSections.Phone
-        if profileSection == .Birthday || profileSection == .Occupation || profileSection == .CompanyName || profileSection == .Position{
+        if section == 6{
+            let indexPath = IndexPath.init(row: section, section: 0)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "clientFooterCell", for: indexPath) as! ClientFooterTableViewCell
+            cell.addButton.setTitle("Add Account", for: .normal)
+            return cell.contentView
+        } else {
             return nil
         }
-        let indexPath = IndexPath.init(row: section, section: 0)
-        let cell = tableView.dequeueReusableCell(withIdentifier: "profileFooterCell", for: indexPath) as! ProfileFooterTableViewCell
-        cell.addButton.setTitle(self.viewModel.footers[indexPath.row], for: .normal)
-        
-        return cell.contentView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let profileSection = ProfileSections(rawValue: section) ?? ProfileSections.Phone
-        switch profileSection {
-        case .Phone:
-            return self.viewModel.model.phoneNumbers.count
-        case .Email:
-            return self.viewModel.model.emailAddress.count
-        case .Social:
-            return self.viewModel.model.socialProfile.count
-        case .Birthday:
+        if section == 6 {
+//            return self.viewModel?.client.accounts.count
+            return 2
+        } else {
             return 1
-        case .Address:
-            return self.viewModel.addressTypes.count * self.viewModel.model.address.count
-        case .Attachment:
-            return self.viewModel.model.attachments.count
-        case .Occupation:
-            return self.viewModel.occupationValues.count
-        case .CompanyName:
-            return self.viewModel.companyValues.count
-        case .Position:
-            return self.viewModel.positionValues.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "profileEditCell", for: indexPath) as! EditProfileTableViewCell
-        let profileSection = ProfileSections(rawValue: indexPath.section) ?? ProfileSections.Phone
-        let addressCell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath) as! AddressTableViewCell
-//        cell.delegate = self
-        cell.dropDownImageView.isHidden = false
-        cell.typeLabelWidthConstraint.constant = 60
-        cell.setIndexPath(indexPath: indexPath)
-        switch profileSection {
-        case .Phone:
-            cell.bindData(model: self.viewModel.model.phoneNumbers[indexPath.row])
-        case .Email:
-            cell.bindData(model: self.viewModel.model.emailAddress[indexPath.row])
-        case .Social:
-            cell.bindData(model: self.viewModel.model.socialProfile[indexPath.row])
-        case .Attachment:
-            cell.bindData(model: self.viewModel.model.attachments[indexPath.row])
-        case .Birthday:
-            cell.typeLabelWidthConstraint.constant = 38
-            cell.dropDownImageView.isHidden = true
-            cell.bindData(model: "31 December,1992",type: profileSection)
-        case .Address:
-            addressCell.setIndexPath(indexPath: indexPath)
-            addressCell.bindData(model: self.viewModel.model.address[indexPath.row])
+        let sectionType = ClientSections(rawValue: indexPath.section) ?? .PersonalId
+        if sectionType == .Address {
+            let addressCell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath) as! AddressTableViewCell
             return addressCell
-        case .Occupation:
-            cell.bindData(model: self.viewModel.model.occupation,type: profileSection)
-        case .CompanyName:
-            cell.bindData(model: self.viewModel.model.companyName,type: profileSection)
-        case .Position:
-            cell.bindData(model: self.viewModel.model.position,type: profileSection)
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "clientEditCell", for: indexPath) as! EditClientTableViewCell
+            cell.setIndexPath(indexPath: indexPath)
+            return cell
         }
-        
-        return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let profileSection = ProfileSections(rawValue: indexPath.section) ?? ProfileSections.Phone
-
-        if profileSection != .Address{
-            CommonClass.sharedInstance.applyBorderOnTableViewSection(tableView, willDisplay: cell, forRowAt: indexPath)
-        }else if profileSection == .Address && self.viewModel.model.address.count == 0 && self.contactVM.contact.address.count == 0{
-            CommonClass.sharedInstance.applyBorderOnTableViewSection(tableView, willDisplay: cell, forRowAt: indexPath)
-        }
     }
 }
 
 extension ClientAddEditViewController: FMImageEditorViewControllerDelegate{
     func fmImageEditorViewController(_ editor: FMImageEditorViewController, didFinishEdittingPhotoWith photo: UIImage) {
         self.dismiss(animated: true, completion: nil)
-        self.viewModel.profilePicAttachment.isUpdated = true
-        self.contactVM.profilePicAttachment.isUpdated = true
         self.profileImageView.image = photo
     }
 }

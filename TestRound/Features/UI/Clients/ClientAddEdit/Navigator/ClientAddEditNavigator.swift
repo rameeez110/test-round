@@ -16,7 +16,7 @@ class ClientAddEditNavigator: ClientAddEditNavigatorProtocol {
     private weak var navigationController: UINavigationController?
 
     init(navigationController: UINavigationController) {
-        navigationController.navigationBar.isHidden = true
+        navigationController.navigationBar.isHidden = false
         self.navigationController = navigationController
     }
     func navigateToBack() {

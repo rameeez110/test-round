@@ -19,6 +19,16 @@
 		B61ED1C527F1D04700405CEB /* TestRoundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ED1C427F1D04700405CEB /* TestRoundUITests.swift */; };
 		B61ED1C727F1D04700405CEB /* TestRoundUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ED1C627F1D04700405CEB /* TestRoundUITestsLaunchTests.swift */; };
 		B650CCD427F4252E00542290 /* ClientAddEditNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCD327F4252E00542290 /* ClientAddEditNavigator.swift */; };
+		B650CCDC27F4304800542290 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B650CCD627F4304800542290 /* AddressTableViewCell.xib */; };
+		B650CCDD27F4304800542290 /* EditClientTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B650CCD727F4304800542290 /* EditClientTableViewCell.xib */; };
+		B650CCDE27F4304800542290 /* EditClientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCD827F4304800542290 /* EditClientTableViewCell.swift */; };
+		B650CCDF27F4304800542290 /* ClientFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B650CCD927F4304800542290 /* ClientFooterTableViewCell.xib */; };
+		B650CCE027F4304800542290 /* ClientFooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCDA27F4304800542290 /* ClientFooterTableViewCell.swift */; };
+		B650CCE127F4304800542290 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCDB27F4304800542290 /* AddressTableViewCell.swift */; };
+		B650CCE427F4314200542290 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCE327F4314200542290 /* Address.swift */; };
+		B650CCE627F438B600542290 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCE527F438B600542290 /* Client.swift */; };
+		B650CCE927F43C0000542290 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCE827F43C0000542290 /* Enums.swift */; };
+		B650CCEC27F4449000542290 /* CommonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCEB27F4449000542290 /* CommonClass.swift */; };
 		B6D7A58C27F393700006B273 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7A58B27F393700006B273 /* LoginViewModel.swift */; };
 		B6D7A58E27F393870006B273 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7A58D27F393870006B273 /* LoginNavigator.swift */; };
 		B6D7A59027F393990006B273 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7A58F27F393990006B273 /* RegisterViewController.swift */; };
@@ -79,6 +89,16 @@
 		B61ED1C427F1D04700405CEB /* TestRoundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRoundUITests.swift; sourceTree = "<group>"; };
 		B61ED1C627F1D04700405CEB /* TestRoundUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRoundUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B650CCD327F4252E00542290 /* ClientAddEditNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientAddEditNavigator.swift; sourceTree = "<group>"; };
+		B650CCD627F4304800542290 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		B650CCD727F4304800542290 /* EditClientTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditClientTableViewCell.xib; sourceTree = "<group>"; };
+		B650CCD827F4304800542290 /* EditClientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditClientTableViewCell.swift; sourceTree = "<group>"; };
+		B650CCD927F4304800542290 /* ClientFooterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClientFooterTableViewCell.xib; sourceTree = "<group>"; };
+		B650CCDA27F4304800542290 /* ClientFooterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientFooterTableViewCell.swift; sourceTree = "<group>"; };
+		B650CCDB27F4304800542290 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		B650CCE327F4314200542290 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		B650CCE527F438B600542290 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		B650CCE827F43C0000542290 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		B650CCEB27F4449000542290 /* CommonClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonClass.swift; sourceTree = "<group>"; };
 		B6D7A58B27F393700006B273 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B6D7A58D27F393870006B273 /* LoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigator.swift; sourceTree = "<group>"; };
 		B6D7A58F27F393990006B273 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +235,8 @@
 		B61ED1D527F1D31200405CEB /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B650CCEA27F4448000542290 /* Utils */,
+				B650CCE727F43BD700542290 /* Enums */,
 				B61ED1DB27F1D38000405CEB /* Networking */,
 				B61ED1DA27F1D37600405CEB /* Constants */,
 				B61ED1D927F1D36800405CEB /* UI */,
@@ -301,6 +323,8 @@
 		B61ED1DF27F1D3B000405CEB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B650CCE327F4314200542290 /* Address.swift */,
+				B650CCE527F438B600542290 /* Client.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -417,8 +441,30 @@
 		B650CCD527F42C1400542290 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				B650CCDB27F4304800542290 /* AddressTableViewCell.swift */,
+				B650CCD627F4304800542290 /* AddressTableViewCell.xib */,
+				B650CCD827F4304800542290 /* EditClientTableViewCell.swift */,
+				B650CCD727F4304800542290 /* EditClientTableViewCell.xib */,
+				B650CCDA27F4304800542290 /* ClientFooterTableViewCell.swift */,
+				B650CCD927F4304800542290 /* ClientFooterTableViewCell.xib */,
 			);
 			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		B650CCE727F43BD700542290 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				B650CCE827F43C0000542290 /* Enums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		B650CCEA27F4448000542290 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B650CCEB27F4449000542290 /* CommonClass.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		B6D7A59D27F3956A0006B273 /* Controller */ = {
@@ -647,8 +693,11 @@
 			files = (
 				B6D7A5B027F397520006B273 /* ClientsListingTableViewCell.xib in Resources */,
 				B61ED1B027F1D04700405CEB /* LaunchScreen.storyboard in Resources */,
+				B650CCDF27F4304800542290 /* ClientFooterTableViewCell.xib in Resources */,
 				B61ED1AD27F1D04700405CEB /* Assets.xcassets in Resources */,
 				B61ED1AB27F1D04500405CEB /* Main.storyboard in Resources */,
+				B650CCDD27F4304800542290 /* EditClientTableViewCell.xib in Resources */,
+				B650CCDC27F4304800542290 /* AddressTableViewCell.xib in Resources */,
 				B6D7A5A927F396E80006B273 /* Client.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -777,10 +826,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B650CCE027F4304800542290 /* ClientFooterTableViewCell.swift in Sources */,
 				B6D7A5A727F396DE0006B273 /* ClientListingViewController.swift in Sources */,
 				B6D7A5AF27F397520006B273 /* ClientsListingTableViewCell.swift in Sources */,
+				B650CCE627F438B600542290 /* Client.swift in Sources */,
+				B650CCE127F4304800542290 /* AddressTableViewCell.swift in Sources */,
 				B6D7A58E27F393870006B273 /* LoginNavigator.swift in Sources */,
 				B6D7A5BA27F39BAA0006B273 /* ClientListingNavigator.swift in Sources */,
+				B650CCE427F4314200542290 /* Address.swift in Sources */,
 				B6D7A58C27F393700006B273 /* LoginViewModel.swift in Sources */,
 				B6D7A59427F394090006B273 /* RegisterNavigator.swift in Sources */,
 				B6D7A59227F393E80006B273 /* RegisterViewModel.swift in Sources */,
@@ -793,10 +846,13 @@
 				B61ED1A427F1D04500405CEB /* AppDelegate.swift in Sources */,
 				B6D7A59927F394640006B273 /* StoryboardExtension.swift in Sources */,
 				B6D7A5AB27F397230006B273 /* ClientListingViewModel.swift in Sources */,
+				B650CCE927F43C0000542290 /* Enums.swift in Sources */,
+				B650CCDE27F4304800542290 /* EditClientTableViewCell.swift in Sources */,
 				B650CCD427F4252E00542290 /* ClientAddEditNavigator.swift in Sources */,
 				B61ED1A627F1D04500405CEB /* SceneDelegate.swift in Sources */,
 				B6D7A59F27F395770006B273 /* AppNavigationController.swift in Sources */,
 				B6D7A59A27F394640006B273 /* UIFontExtension.swift in Sources */,
+				B650CCEC27F4449000542290 /* CommonClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

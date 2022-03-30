@@ -42,6 +42,8 @@ class LoginNavigator: LoginNavigatorProtocol {
         if let nc = self.navigationController {
             let navigator = ClientListingNavigator(navigationController: nc)
             let viewModel = ClientListingViewModel(navigator: navigator)
+            viewModel.delegate = clientListingVC
+            clientListingVC.viewModel = viewModel
             navigationController?.pushViewController(clientListingVC, animated: true)
         }
     }

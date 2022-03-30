@@ -73,6 +73,7 @@ extension ClientListingViewController: UISearchBarDelegate {
     }
 }
 
+//MARK: - Delegates
 extension ClientListingViewController: UITableViewDelegate ,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
@@ -114,6 +115,12 @@ extension ClientListingViewController: SwipeTableViewCellDelegate {
         }
         
         return nil
+    }
+}
+
+extension ClientListingViewController: ClientListingViewModelDelegate {
+    func alert(with title: String, message: String) {
+
     }
 }
 
