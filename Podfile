@@ -12,6 +12,7 @@ target 'TestRound' do
   pod 'IQKeyboardManagerSwift'
   pod 'SwipeCellKit'
   pod 'SwiftyAvatar'
+  pod 'FMPhotoPicker'
 
   target 'TestRoundTests' do
     inherit! :search_paths

@@ -14,15 +14,20 @@ protocol ClientListingViewModelDelegate: class {
 // Protocol for view model will use it for wiring
 protocol ClientListingViewModelProtocol {
     var delegate: ClientListingViewModelDelegate? { get set }
+    
+    func didTapAdd()
 }
 
 final class ClientListingViewModel: ClientListingViewModelProtocol {
-
     weak var delegate: ClientListingViewModelDelegate?
     private let navigator: ClientListingNavigatorProtocol
 
     init(navigator: ClientListingNavigatorProtocol, delegate: ClientListingViewModelDelegate? = nil) {
         self.delegate = delegate
         self.navigator = navigator
+    }
+    
+    func didTapAdd() {
+        navigator.navigateToClienAddUpdate()
     }
 }

@@ -24,11 +24,11 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="bxx-kS-gHU"/>
                                 </connections>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4PN-DJ-x12">
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4PN-DJ-x12">
                                 <rect key="frame" x="10" y="49" width="394" height="45"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="zAk-T4-6dF">
-                                        <rect key="frame" x="0.0" y="0.0" width="336" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="329" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="taQ-0T-hen"/>
                                         </constraints>
@@ -43,9 +43,9 @@
                                         </connections>
                                     </searchBar>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvg-PN-c0k">
-                                        <rect key="frame" x="344" y="7" width="50" height="31"/>
+                                        <rect key="frame" x="329" y="7" width="65" height="31"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="CaC-1p-U5E"/>
+                                            <constraint firstAttribute="width" constant="65" id="CaC-1p-U5E"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Add"/>

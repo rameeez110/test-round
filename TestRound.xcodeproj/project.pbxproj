@@ -18,6 +18,7 @@
 		B61ED1BB27F1D04700405CEB /* TestRoundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ED1BA27F1D04700405CEB /* TestRoundTests.swift */; };
 		B61ED1C527F1D04700405CEB /* TestRoundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ED1C427F1D04700405CEB /* TestRoundUITests.swift */; };
 		B61ED1C727F1D04700405CEB /* TestRoundUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61ED1C627F1D04700405CEB /* TestRoundUITestsLaunchTests.swift */; };
+		B650CCD427F4252E00542290 /* ClientAddEditNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCD327F4252E00542290 /* ClientAddEditNavigator.swift */; };
 		B6D7A58C27F393700006B273 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7A58B27F393700006B273 /* LoginViewModel.swift */; };
 		B6D7A58E27F393870006B273 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7A58D27F393870006B273 /* LoginNavigator.swift */; };
 		B6D7A59027F393990006B273 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7A58F27F393990006B273 /* RegisterViewController.swift */; };
@@ -77,6 +78,7 @@
 		B61ED1C027F1D04700405CEB /* TestRoundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestRoundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B61ED1C427F1D04700405CEB /* TestRoundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRoundUITests.swift; sourceTree = "<group>"; };
 		B61ED1C627F1D04700405CEB /* TestRoundUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRoundUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B650CCD327F4252E00542290 /* ClientAddEditNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientAddEditNavigator.swift; sourceTree = "<group>"; };
 		B6D7A58B27F393700006B273 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B6D7A58D27F393870006B273 /* LoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigator.swift; sourceTree = "<group>"; };
 		B6D7A58F27F393990006B273 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -404,6 +406,21 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		B650CCD227F4250400542290 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				B650CCD327F4252E00542290 /* ClientAddEditNavigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		B650CCD527F42C1400542290 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
 		B6D7A59D27F3956A0006B273 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +452,7 @@
 		B6D7A5A227F396A40006B273 /* ClientAddEdit */ = {
 			isa = PBXGroup;
 			children = (
+				B650CCD227F4250400542290 /* Navigator */,
 				B6D7A5B227F397A20006B273 /* ViewModel */,
 				B6D7A5B127F397930006B273 /* View */,
 			);
@@ -478,6 +496,7 @@
 		B6D7A5B127F397930006B273 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B650CCD527F42C1400542290 /* CustomCells */,
 				B6D7A5B327F397A90006B273 /* ViewController */,
 			);
 			path = View;
@@ -774,6 +793,7 @@
 				B61ED1A427F1D04500405CEB /* AppDelegate.swift in Sources */,
 				B6D7A59927F394640006B273 /* StoryboardExtension.swift in Sources */,
 				B6D7A5AB27F397230006B273 /* ClientListingViewModel.swift in Sources */,
+				B650CCD427F4252E00542290 /* ClientAddEditNavigator.swift in Sources */,
 				B61ED1A627F1D04500405CEB /* SceneDelegate.swift in Sources */,
 				B6D7A59F27F395770006B273 /* AppNavigationController.swift in Sources */,
 				B6D7A59A27F394640006B273 /* UIFontExtension.swift in Sources */,

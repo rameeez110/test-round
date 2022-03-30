@@ -15,6 +15,7 @@ class ClientListingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     private let refreshControl = UIRefreshControl()
+    var viewModel: ClientListingViewModelProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class ClientListingViewController: UIViewController {
 extension ClientListingViewController {
     // MARK: - Action handlers
     @IBAction func didTapAdd() {
-        
+        self.viewModel?.didTapAdd()
     }
     
     @objc func refreshData(_ sender: AnyObject) {
