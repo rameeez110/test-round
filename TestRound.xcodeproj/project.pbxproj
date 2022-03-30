@@ -167,6 +167,7 @@
 		B61ED19727F1D04500405CEB = {
 			isa = PBXGroup;
 			children = (
+				B650CCED27F4464A00542290 /* db.json */,
 				B61ED1A227F1D04500405CEB /* TestRound */,
 				B61ED1B927F1D04700405CEB /* TestRoundTests */,
 				B61ED1C327F1D04700405CEB /* TestRoundUITests */,
@@ -189,7 +190,6 @@
 		B61ED1A227F1D04500405CEB /* TestRound */ = {
 			isa = PBXGroup;
 			children = (
-				B650CCED27F4464A00542290 /* db.json */,
 				B61ED1D627F1D32700405CEB /* Features */,
 				B61ED1D527F1D31200405CEB /* Common */,
 				B61ED1D427F1D30C00405CEB /* Resources */,
