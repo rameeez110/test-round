@@ -39,7 +39,7 @@ class RegisterViewController: UIViewController{
 //MARK: - IBActions
 extension RegisterViewController {
     @IBAction func didTapRegister() {
-        self.viewModel?.didTapRegister()
+        self.viewModel?.didTapRegister(email: self.emailTextField.text!, password: self.passwordTextField.text!, confirmPassword: self.confirmPasswordTextField.text!)
     }
     @IBAction func didTapLogin() {
         self.viewModel?.didTapLogin()
@@ -52,6 +52,10 @@ extension RegisterViewController: RegisterViewModelDelegate {
     func alert(with title: String, message: String) {
         self.infoLabel.isHidden = false
         self.infoLabel.text = message
+    }
+    func validationError(error: String) {
+        self.infoLabel.isHidden = false
+        self.infoLabel.text = error
     }
 }
 

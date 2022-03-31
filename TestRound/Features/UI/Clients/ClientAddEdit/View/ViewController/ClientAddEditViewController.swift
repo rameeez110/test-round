@@ -17,6 +17,10 @@ class ClientAddEditViewController: UIViewController {
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     
+    @IBOutlet weak var infoLabel: UILabel!
+    
+    @IBOutlet weak var doneButton: UIButton!
+    
     var imagePicker = UIImagePickerController()
     var viewModel: ClientAddEditViewModelProtocol?
     var config = FMPhotoPickerConfig()
@@ -66,8 +70,8 @@ extension ClientAddEditViewController {
         self.profileImageView.image = UIImage(named: "user_new")
     }
     // Use this method for add and update
-    @objc func didTapTick() {
-        
+    @IBAction func didTapTick() {
+        self.viewModel?.didTapDone()
     }
     @IBAction func didTapChangeImage() {
         let sheet = UIAlertController.init(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
@@ -239,6 +243,11 @@ extension ClientAddEditViewController: UITextFieldDelegate {
 }
 
 extension ClientAddEditViewController: ClientAddEditViewModelDelegate {
+    func validationError(error: String) {
+        self.infoLabel.text = error
+        self.infoLabel.isHidden = true
+    }
+    
     func alert(with title: String, message: String) {
         
     }

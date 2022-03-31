@@ -13,6 +13,8 @@ class ClientListingViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var addButton: UIButton!
 
     private let refreshControl = UIRefreshControl()
     var viewModel: ClientListingViewModelProtocol?

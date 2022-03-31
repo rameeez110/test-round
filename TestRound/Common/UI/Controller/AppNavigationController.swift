@@ -15,13 +15,13 @@ class AppNavigationController: UINavigationController {
     }
 
     private func setupUI() {
-        navigationBar.barTintColor = .black
+        navigationBar.barTintColor = .white
         navigationBar.tintColor = .white
         navigationController?.navigationBar.isTranslucent = false
         navigationBar.titleTextAttributes =
             [NSAttributedString.Key.foregroundColor: UIColor.white,
              NSAttributedString.Key.font: UIFont(.avenirCondensedDemiBold, size: .standard(.h1))]
-        navigationBar.backgroundColor = .black
+        navigationBar.backgroundColor = .white
     }
 
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {

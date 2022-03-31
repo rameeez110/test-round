@@ -29,7 +29,7 @@ extension ViewController {
         self.viewModel?.didTapRegister()
     }
     @IBAction func didTapLogin() {
-        self.viewModel?.didTapLogin()
+        self.viewModel?.didTapLogin(email: self.emailTextField.text!,password: self.passwordTextField.text!)
     }
 }
 
@@ -39,5 +39,9 @@ extension ViewController: LoginViewModelDelegate {
     func alert(with title: String, message: String) {
         self.infoLabel.isHidden = false
         self.infoLabel.text = message
+    }
+    func validationError(error: String) {
+        self.infoLabel.isHidden = false
+        self.infoLabel.text = error
     }
 }

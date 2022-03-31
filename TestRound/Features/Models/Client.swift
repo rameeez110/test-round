@@ -10,7 +10,7 @@ import Foundation
 struct Client: Decodable {
     var firstName: String?
     var lastName: String?
-//    var sex: Gender?
+    var sex: Int? // Gender case male = 0,female 1
     var accounts: [String]?
     var personalId: String?
     var phoneNumber: String?

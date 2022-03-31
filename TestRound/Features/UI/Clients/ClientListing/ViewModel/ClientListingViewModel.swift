@@ -22,7 +22,11 @@ final class ClientListingViewModel: ClientListingViewModelProtocol {
     weak var delegate: ClientListingViewModelDelegate?
     private let navigator: ClientListingNavigatorProtocol
     private var clients: [Client] = []
+    private var user: User?
     private let clientService: ClientServiceProtocol
+    var isAdmin: Bool {
+        return self.user?.email == "admin@gmail.com"
+    }
     
     var isLast: Bool = false {
         didSet {

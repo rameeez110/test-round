@@ -13,6 +13,7 @@ class CommonClass {
 }
 
 extension CommonClass {
+    // Using this method to get section title for client add edit screen 
     func getSectionHeader(sectionType: ClientSections) -> String {
         var string = ""
         switch sectionType {
@@ -30,5 +31,19 @@ extension CommonClass {
             string = "Account"
         }
         return string
+    }
+    
+    // Validation Methods
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+    
+    // Using regex to validate passowrd pattern
+    func validatePassword(text: String) -> Bool {
+        let passwordRegex = "^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\\d]){1,})(?=(.*[\\W]){1,})(?!.*\\s).{8,}$"
+        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: text)
     }
 }
