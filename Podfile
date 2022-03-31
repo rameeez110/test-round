@@ -13,6 +13,7 @@ target 'TestRound' do
   pod 'SwipeCellKit'
   pod 'SwiftyAvatar'
   pod 'FMPhotoPicker'
+  pod 'MBRadioCheckboxButton'
 
   target 'TestRoundTests' do
     inherit! :search_paths

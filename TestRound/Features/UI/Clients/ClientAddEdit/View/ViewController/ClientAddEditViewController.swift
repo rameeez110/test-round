@@ -55,6 +55,8 @@ extension ClientAddEditViewController {
         self.tableView.register(footerNib, forCellReuseIdentifier: "clientFooterCell")
         let addressNib = UINib(nibName: "AddressTableViewCell", bundle:nil)
         self.tableView.register(addressNib, forCellReuseIdentifier: "addressCell")
+        let genderNib = UINib(nibName: "GenderTableViewCell", bundle:nil)
+        self.tableView.register(genderNib, forCellReuseIdentifier: "genderCell")
         self.tableView.estimatedRowHeight = 58
         
         let dummyViewHeight = CGFloat(1)
@@ -219,9 +221,14 @@ extension ClientAddEditViewController: UITableViewDelegate ,UITableViewDataSourc
             let addressCell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath) as! AddressTableViewCell
             return addressCell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "clientEditCell", for: indexPath) as! EditClientTableViewCell
-            cell.setIndexPath(indexPath: indexPath)
-            return cell
+            if sectionType == .Gender {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "genderCell", for: indexPath) as! GenderTableViewCell
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "clientEditCell", for: indexPath) as! EditClientTableViewCell
+                cell.setIndexPath(indexPath: indexPath)
+                return cell
+            }
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
