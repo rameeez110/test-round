@@ -21,8 +21,19 @@ protocol ClientListingViewModelProtocol {
 final class ClientListingViewModel: ClientListingViewModelProtocol {
     weak var delegate: ClientListingViewModelDelegate?
     private let navigator: ClientListingNavigatorProtocol
+    private var clients: [Client] = []
+    private let clientService: ClientServiceProtocol
+    
+    var isLast: Bool = false {
+        didSet {
+            if isLast {
+                clientService.getClients()
+            }
+        }
+    }
 
-    init(navigator: ClientListingNavigatorProtocol, delegate: ClientListingViewModelDelegate? = nil) {
+    init(clientService: ClientServiceProtocol, navigator: ClientListingNavigatorProtocol, delegate: ClientListingViewModelDelegate? = nil) {
+        self.clientService = clientService
         self.delegate = delegate
         self.navigator = navigator
     }

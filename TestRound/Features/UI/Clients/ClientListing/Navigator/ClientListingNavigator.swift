@@ -26,8 +26,10 @@ class ClientListingNavigator: ClientListingNavigatorProtocol {
         let addEditVC: ClientAddEditViewController = storyboard.instantiateViewController()
         //View Model create & setup
         if let nc = self.navigationController {
-            let navigator = ClientListingNavigator(navigationController: nc)
-            let viewModel = ClientListingViewModel(navigator: navigator)
+            let navigator = ClientAddEditNavigator.init(navigationController: nc)
+            let viewModel = ClientAddEditViewModel.init(navigator: navigator)
+            viewModel.delegate = addEditVC
+            addEditVC.viewModel = viewModel
             navigationController?.pushViewController(addEditVC, animated: true)
         }
     }

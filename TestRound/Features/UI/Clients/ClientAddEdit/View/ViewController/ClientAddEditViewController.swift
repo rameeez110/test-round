@@ -237,3 +237,9 @@ extension ClientAddEditViewController: UITextFieldDelegate {
         
     }
 }
+
+extension ClientAddEditViewController: ClientAddEditViewModelDelegate {
+    func alert(with title: String, message: String) {
+        
+    }
+}

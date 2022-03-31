@@ -41,7 +41,10 @@ class LoginNavigator: LoginNavigatorProtocol {
         //View Model create & setup
         if let nc = self.navigationController {
             let navigator = ClientListingNavigator(navigationController: nc)
-            let viewModel = ClientListingViewModel(navigator: navigator)
+            let remoteDataSource = ClientsDataStore()
+            let repository = ClientsRepository.init(remoteClientDataSource: remoteDataSource)
+            let service = ClientService(clientRepository: repository)
+            let viewModel = ClientListingViewModel(clientService: service, navigator: navigator)
             viewModel.delegate = clientListingVC
             clientListingVC.viewModel = viewModel
             navigationController?.pushViewController(clientListingVC, animated: true)

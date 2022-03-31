@@ -30,6 +30,13 @@
 		B650CCE927F43C0000542290 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCE827F43C0000542290 /* Enums.swift */; };
 		B650CCEC27F4449000542290 /* CommonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCEB27F4449000542290 /* CommonClass.swift */; };
 		B650CCEE27F4464A00542290 /* db.json in Resources */ = {isa = PBXBuildFile; fileRef = B650CCED27F4464A00542290 /* db.json */; };
+		B650CCF127F4551200542290 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCEF27F4551200542290 /* NetworkingManager.swift */; };
+		B650CCF227F4551200542290 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCF027F4551200542290 /* Networking.swift */; };
+		B650CCF427F4555B00542290 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCF327F4555B00542290 /* Constants.swift */; };
+		B650CCF727F4559A00542290 /* ClientsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCF627F4559A00542290 /* ClientsDataStore.swift */; };
+		B650CCF927F45CDD00542290 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650CCF827F45CDD00542290 /* CustomError.swift */; };
+		B6802F4927F49493006DDD64 /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6802F4827F49493006DDD64 /* ClientService.swift */; };
+		B6802F4C27F495B0006DDD64 /* ClientsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6802F4B27F495B0006DDD64 /* ClientsRepository.swift */; };
 		B6D7A58C27F393700006B273 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7A58B27F393700006B273 /* LoginViewModel.swift */; };
 		B6D7A58E27F393870006B273 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7A58D27F393870006B273 /* LoginNavigator.swift */; };
 		B6D7A59027F393990006B273 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7A58F27F393990006B273 /* RegisterViewController.swift */; };
@@ -101,6 +108,13 @@
 		B650CCE827F43C0000542290 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		B650CCEB27F4449000542290 /* CommonClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonClass.swift; sourceTree = "<group>"; };
 		B650CCED27F4464A00542290 /* db.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = db.json; sourceTree = "<group>"; };
+		B650CCEF27F4551200542290 /* NetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		B650CCF027F4551200542290 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		B650CCF327F4555B00542290 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B650CCF627F4559A00542290 /* ClientsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsDataStore.swift; sourceTree = "<group>"; };
+		B650CCF827F45CDD00542290 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		B6802F4827F49493006DDD64 /* ClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
+		B6802F4B27F495B0006DDD64 /* ClientsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsRepository.swift; sourceTree = "<group>"; };
 		B6D7A58B27F393700006B273 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B6D7A58D27F393870006B273 /* LoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigator.swift; sourceTree = "<group>"; };
 		B6D7A58F27F393990006B273 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +303,7 @@
 		B61ED1DA27F1D37600405CEB /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				B650CCF327F4555B00542290 /* Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -296,6 +311,8 @@
 		B61ED1DB27F1D38000405CEB /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				B650CCF027F4551200542290 /* Networking.swift */,
+				B650CCEF27F4551200542290 /* NetworkingManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -303,6 +320,7 @@
 		B61ED1DC27F1D38900405CEB /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				B6802F4A27F4958B006DDD64 /* Client */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -310,6 +328,7 @@
 		B61ED1DD27F1D38E00405CEB /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B650CCF527F4558A00542290 /* Remote */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -335,6 +354,7 @@
 		B61ED1E027F1D3B800405CEB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B6802F4827F49493006DDD64 /* ClientService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -466,8 +486,25 @@
 			isa = PBXGroup;
 			children = (
 				B650CCEB27F4449000542290 /* CommonClass.swift */,
+				B650CCF827F45CDD00542290 /* CustomError.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		B650CCF527F4558A00542290 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				B650CCF627F4559A00542290 /* ClientsDataStore.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		B6802F4A27F4958B006DDD64 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				B6802F4B27F495B0006DDD64 /* ClientsRepository.swift */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 		B6D7A59D27F3956A0006B273 /* Controller */ = {
@@ -832,9 +869,11 @@
 			files = (
 				B650CCE027F4304800542290 /* ClientFooterTableViewCell.swift in Sources */,
 				B6D7A5A727F396DE0006B273 /* ClientListingViewController.swift in Sources */,
+				B6802F4C27F495B0006DDD64 /* ClientsRepository.swift in Sources */,
 				B6D7A5AF27F397520006B273 /* ClientsListingTableViewCell.swift in Sources */,
 				B650CCE627F438B600542290 /* Client.swift in Sources */,
 				B650CCE127F4304800542290 /* AddressTableViewCell.swift in Sources */,
+				B650CCF427F4555B00542290 /* Constants.swift in Sources */,
 				B6D7A58E27F393870006B273 /* LoginNavigator.swift in Sources */,
 				B6D7A5BA27F39BAA0006B273 /* ClientListingNavigator.swift in Sources */,
 				B650CCE427F4314200542290 /* Address.swift in Sources */,
@@ -843,18 +882,23 @@
 				B6D7A59227F393E80006B273 /* RegisterViewModel.swift in Sources */,
 				B61ED1A827F1D04500405CEB /* ViewController.swift in Sources */,
 				B6D7A59C27F395430006B273 /* AppNavigator.swift in Sources */,
+				B650CCF127F4551200542290 /* NetworkingManager.swift in Sources */,
 				B6D7A59027F393990006B273 /* RegisterViewController.swift in Sources */,
 				B6D7A5B727F397D50006B273 /* ClientAddEditViewController.swift in Sources */,
+				B650CCF927F45CDD00542290 /* CustomError.swift in Sources */,
 				B6D7A59827F394640006B273 /* UIViewExtension.swift in Sources */,
 				B6D7A5B527F397C40006B273 /* ClientAddEditViewModel.swift in Sources */,
+				B6802F4927F49493006DDD64 /* ClientService.swift in Sources */,
 				B61ED1A427F1D04500405CEB /* AppDelegate.swift in Sources */,
 				B6D7A59927F394640006B273 /* StoryboardExtension.swift in Sources */,
 				B6D7A5AB27F397230006B273 /* ClientListingViewModel.swift in Sources */,
 				B650CCE927F43C0000542290 /* Enums.swift in Sources */,
+				B650CCF727F4559A00542290 /* ClientsDataStore.swift in Sources */,
 				B650CCDE27F4304800542290 /* EditClientTableViewCell.swift in Sources */,
 				B650CCD427F4252E00542290 /* ClientAddEditNavigator.swift in Sources */,
 				B61ED1A627F1D04500405CEB /* SceneDelegate.swift in Sources */,
 				B6D7A59F27F395770006B273 /* AppNavigationController.swift in Sources */,
+				B650CCF227F4551200542290 /* Networking.swift in Sources */,
 				B6D7A59A27F394640006B273 /* UIFontExtension.swift in Sources */,
 				B650CCEC27F4449000542290 /* CommonClass.swift in Sources */,
 			);

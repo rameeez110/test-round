@@ -7,35 +7,53 @@
 
 import Foundation
 
-struct Client {
-    var firstName = String()
-    var lastName = String()
-    var sex = Gender.Male
-    var accounts = [String]()
-    var personalId = String()
-    var phoneNumber = String()
-    var email = String()
-    var address = Address()
-    var avatarId = String()
+struct Client: Decodable {
+    var firstName: String?
+    var lastName: String?
+//    var sex: Gender?
+    var accounts: [String]?
+    var personalId: String?
+    var phoneNumber: String?
+    var email: String?
+    var address: Address?
+    var avatarId: String?
     
-    var dictionary: [String: Any] {
-      return [
-        "profilePicture": self.avatarId,
-        "firstName": self.firstName,
-        "lastName": self.lastName,
-        "address": self.address.dictionary,
-        "accounts": self.getAccounts(),
-        "email": self.email,
-        "personalId": self.personalId,
-        "phoneNumber": self.phoneNumber,
-        "sex": self.sex.rawValue,
-      ]
+    private enum CodingKeys: String, CodingKey {
+        case firstName = "first_name"
+        case lastName = "last_name"
+//        case sex
+        case clients
+        case accounts
+        case personalId = "personal_id"
+        case email
+        case phoneNumber = "phone_number"
+        case avatarId = "profile_photo"
+        case address
     }
-    func getAccounts() -> [String] {
-        var array = [String]()
-        for each in accounts {
-            array.append(each)
-        }
-        return array
+    init(from decoder: Decoder) throws {
+        
     }
+}
+
+struct ClientResponseModel {
+    let page: Int?
+    let totalPages: Int?
+    let clients: [Client]?
+    
+    init(page: Int,totalPages: Int,clients: [Client]) {
+        self.page = page
+        self.totalPages = totalPages
+        self.clients = clients
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case page
+        case totalResults = "total_results"
+        case totalPages = "total_pages"
+        case clients = "results"
+    }
+}
+
+struct ClientRequestModel: Encodable {
+    let page: Int
 }

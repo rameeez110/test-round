@@ -23,7 +23,7 @@ final class ClientAddEditViewModel: ClientAddEditViewModelProtocol {
     weak var delegate: ClientAddEditViewModelDelegate?
     private let navigator: ClientAddEditNavigatorProtocol
     
-    var client = Client()
+    var client: Client?
 
     init(navigator: ClientAddEditNavigatorProtocol, delegate: ClientAddEditViewModelDelegate? = nil) {
         self.delegate = delegate

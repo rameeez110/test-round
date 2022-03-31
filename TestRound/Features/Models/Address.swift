@@ -7,12 +7,11 @@
 
 import Foundation
 
-struct Address: Codable {
-    var city = String()
-    var country = String()
-    var street = String()
-    var zip = String()
-    var id = Int()
+struct Address: Decodable {
+    var city: String?
+    var country: String?
+    var street: String?
+    var zip: String?
     
     init(street: String,city: String,zip:String,country: String) {
         self.city = city
@@ -23,13 +22,10 @@ struct Address: Codable {
     init() {
         
     }
-    
-    var dictionary: [String: Any] {
-      return [
-        "city": self.city,
-        "street": self.street,
-        "country": self.country,
-        "zip": self.zip,
-      ]
+    private enum CodingKeys: String, CodingKey {
+        case city
+        case country
+        case zip
+        case street
     }
 }
